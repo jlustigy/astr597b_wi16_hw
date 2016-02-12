@@ -1,0 +1,77 @@
+# Schema for 2MASS table
+filters: {complevel: 5, complib: blosc}
+schema:
+  common:
+    primary_key: ID
+    spatial_keys: [RA, DEC]
+    columns:
+    - [RUN, i8(LONG)]
+    - [RERUN, a4(STRING)]
+    - [CAMCOL, i8(LONG)]
+    - [FIELD, i8(LONG)]
+    - [ID, i8(LONG)]
+    - [OBJC_TYPE, i8(LONG)]
+    - [OBJC_FLAGS, i8(LONG)]
+    - [OBJC_FLAGS2, i8(LONG)]
+    - [ZHEDFLAG, i4(INT)]
+    - [OBJC_ROWC, f8(FLOAT)]
+    - [ROWV, f8(FLOAT)]
+    - [ROWVERR, f8(FLOAT)]
+    - [COLV, f8(FLOAT)]
+    - [COLVERR, f8(FLOAT)]
+    - [COLC, f8(FLOAT[5])]
+    - [FLAGS, i8(LONG[5])]
+    - [FLAGS2, i8(LONG[5])]
+    - [RA, f8(DOUBLE)]
+    - [DEC, f8(DOUBLE)]
+  photometry: 
+    columns:
+    - [SKYFLUX, f8(FLOAT[5])] 
+    - [PSFFLUX, f8(FLOAT[5])]
+    - [PSFFLUX_IVAR, f8(FLOAT[5])] 
+    - [MODELFLUX, f8(FLOAT[5])]
+    - [MODELFLUX_IVAR, f8(FLOAT[5])]
+    - [EXTINCTION, f8(FLOAT[5])]
+    - [APERFLUX6, f8(FLOAT)]
+  image:
+    columns:
+    - [PSP_STATUS, i8(LONG[5])]
+    - [PSF_FWHM, f8(FLOAT[5])]
+    - [RESOLVE_STATUS, i4(INT)]
+    - [THING_ID, i8(LONG)]
+    - [IFIELD, i8(LONG)]
+    - [BALKAN_ID, i8(LONG)]
+    - [NDETECT, i4(INT)]
+    - [CALIB_STATUS, i4(INT[5])]
+    - [NMGYPERCOUNT, f8(FLOAT[5])]
+  match:
+    columns:
+    - [TMASS_J, f8(FLOAT)]
+    - [TMASS_J_IVAR, f8(FLOAT)]
+    - [TMASS_H, f8(FLOAT)]
+    - [TMASS_H_IVAR, f8(FLOAT)]
+    - [TMASS_K, f8(FLOAT)]
+    - [TMASS_K_IVAR, f8(FLOAT)]
+    - [TMASS_PH_QUAL, a3(CHAR[3])]
+    - [TMASS_RD_FLG, i4(INT)]
+    - [TMASS_BL_FLG, i4(INT)]
+    - [TMASS_CC_FLG, a3(CHAR[3])]
+    - [TMASS_GAL_CONTAM, (BYTE)]
+    - [TMASS_MP_FLG, (BYTE)]
+    - [TMASS_JDATE, f8(DOUBLE)]
+    - [TMASS_MATCHDIST, f8(FLOAT)]
+    - [TMASS_NMATCH, i4(INT)]
+
+    
+    - [sdss_id, u8]
+    - [objid, u8]
+    - [ra, f8]
+    - [dec, f8]
+    - [l, f8]
+    - [b, f8]
+    - [Ar, f4]
+    - [g, f4]
+    - [r, f4]
+    - [gErr, f4]
+    - [rErr, f4]
+    - [flags, i8]
