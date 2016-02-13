@@ -1,0 +1,65 @@
+# Schema for SDSS table
+filters: {complevel: 5, complib: blosc}
+schema:
+  common:
+    primary_key: obj_id
+    spatial_keys: [RA, DEC]
+    columns:
+    - [obj_id, u8]
+    - [RUN, i2]
+    - [RERUN, a3]
+    - [CAMCOL, u1]
+    - [FIELD, i2]
+    - [ID, i2]
+    - [OBJC_TYPE, i4]
+    - [OBJC_FLAGS, i4]
+    - [OBJC_FLAGS2, i4]
+    - [ZHEDFLAG, i2]
+    - [OBJC_ROWC, f4]
+    - [ROWVDEG, f4]
+    - [ROWVDEGERR, f4]
+    - [COLVDEG, f4]
+    - [COLVDEGERR, f4]
+    - [ROWC, 5f4]
+    - [COLC, 5f4]
+    - [FLAGS, 5i4]
+    - [FLAGS2, 5i4]
+    - [RA, f8]
+    - [DEC, f8]
+  photometry: 
+    columns:
+    - [SKYFLUX, 5f4] 
+    - [PSFFLUX, 5f4]
+    - [PSFFLUX_IVAR, 5f4] 
+    - [MODELFLUX, 5f4]
+    - [MODELFLUX_IVAR, 5f4]
+    - [EXTINCTION, 5f4]
+    - [APERFLUX6, 5f4]
+  image:
+    columns:
+    - [PSP_STATUS, 5i4]
+    - [PSF_FWHM, 5f4]
+    - [RESOLVE_STATUS, i4]
+    - [THING_ID, i4]
+    - [IFIELD, i4]
+    - [BALKAN_ID, i4]
+    - [NDETECT, i4]
+    - [CALIB_STATUS, 5i4]
+    - [NMGYPERCOUNT, 5f4]
+  match:
+    columns:
+    - [TMASS_J, f4]
+    - [TMASS_J_IVAR, f4]
+    - [TMASS_H, f4]
+    - [TMASS_H_IVAR, f4]
+    - [TMASS_K, f4]
+    - [TMASS_K_IVAR, f4]
+    - [TMASS_PH_QUAL, a3]
+    - [TMASS_RD_FLG, i2]
+    - [TMASS_BL_FLG, i2]
+    - [TMASS_CC_FLG, a3]
+    - [TMASS_GAL_CONTAM, u1]
+    - [TMASS_MP_FLG, u1]
+    - [TMASS_JDATE, f8]
+    - [PM_DIST22, f4]
+    - [PM_MATCH, i4]
