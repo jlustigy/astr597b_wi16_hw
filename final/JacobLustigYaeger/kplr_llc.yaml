@@ -1,0 +1,33 @@
+# Schema for Kepler lightcurves
+filters: {complevel: 5, complib: blosc}
+schema:
+  common:
+    primary_key: obj_id
+    spatial_keys: [obj_id, cadenceno]
+    columns:
+    - [obj_id, u8]
+    - [time, f8]
+    - [timecorr, f4]
+    - [cadenceno, i4]
+  photometry: 
+    columns:
+    - [sap_flux, f4]
+    - [sap_flux_err, f4]
+    - [sap_bkg, f4]
+    - [sap_bkg_err, f4]
+    - [pdcsap_flux, f4]
+    - [pdcsap_flux_err, f4]
+    - [sap_quality, i4]
+    - [psf_centr1, f8]
+    - [psf_centr1_err, f4]
+    - [psf_centr2, f8]
+    - [psf_centr2_err, f4]
+  telemetry:
+    columns:
+    - [mom_centr1, f8]
+    - [mom_centr1_err, f4]
+    - [mom_centr2, f8]
+    - [mom_centr2_err, f4]
+    - [pos_corr1, f4]
+    - [pos_corr2, f4]
+    

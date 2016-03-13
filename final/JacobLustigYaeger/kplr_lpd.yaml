@@ -1,0 +1,24 @@
+# Schema for Kepler target pixel files
+filters: {complevel: 5, complib: blosc}
+schema:
+  common:
+    primary_key: obj_id
+    spatial_keys: [obj_id, cadenceno]
+    columns:
+    - [obj_id, u8]
+    - [time, f8]
+    - [timecorr, f4]
+    - [cadenceno, i4]
+    - [cosmic_rays, '(4,6)f4']
+    - [quality, i4]
+    - [pos_corr1, f4]
+    - [pos_corr2, f4]
+    - [rb_level, '(4,5)f4']
+  photometry: 
+    columns:
+    - [raw_cnts, '(4,6)i4']
+    - [flux, '(4,6)f4']
+    - [flux_err, '(4,6)f4']
+    - [flux_bkg, '(4,6)f4']
+    - [flux_bkg_err, '(4,6)f4']
+    
